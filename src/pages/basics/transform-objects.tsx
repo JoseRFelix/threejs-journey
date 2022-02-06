@@ -8,10 +8,26 @@ import { useEffect } from "react";
 const initScene = () => {
   const scene = new THREE.Scene();
 
-  const geometry = new THREE.BoxGeometry(1, 1, 1);
-  const material = new THREE.MeshBasicMaterial({ color: "red" });
-  const cube = new THREE.Mesh(geometry, material);
-  scene.add(cube);
+  const axesHelper = new THREE.AxesHelper();
+  scene.add(axesHelper);
+
+  const group = new THREE.Group();
+  scene.add(group);
+
+  const cubeA = new THREE.Mesh(
+    new THREE.BoxGeometry(1, 1, 1),
+    new THREE.MeshBasicMaterial({ color: "red" })
+  );
+  const cubeB = new THREE.Mesh(
+    new THREE.BoxGeometry(1, 1, 1),
+    new THREE.MeshBasicMaterial({ color: "red" })
+  );
+  const cubeC = new THREE.Mesh(
+    new THREE.BoxGeometry(1, 1, 1),
+    new THREE.MeshBasicMaterial({ color: "red" })
+  );
+
+  group.add(cubeA, cubeB, cubeC);
 
   const sizes = {
     width: 800,
@@ -20,6 +36,9 @@ const initScene = () => {
 
   const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height);
   camera.position.z = 3;
+
+  camera.lookAt(group.position);
+
   scene.add(camera);
 
   const canvas = document.querySelector(".webgl");
