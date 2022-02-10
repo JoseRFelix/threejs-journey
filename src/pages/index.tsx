@@ -15,6 +15,22 @@ const lessons = [
     url: "/basics/transform-objects",
   },
   {
+    title: "Animations",
+    url: "/basics/animations",
+  },
+  {
+    title: "Cameras",
+    url: "/basics/cameras",
+  },
+  {
+    title: "Fullscreen and Resizing",
+    url: "/basics/fullscreen-and-resizing",
+  },
+  {
+    title: "Geometry",
+    url: "/basics/geometry",
+  },
+  {
     title: "Textures",
     url: "/basics/textures",
   },
@@ -28,7 +44,7 @@ const Home: NextPage = () => {
         <div className="flex flex-col space-y-6">
           <h1 className="text-xl font-bold">Basics</h1>
 
-          <div className="flex space-x-4">
+          <div className="grid grid-cols-5 gap-3">
             {lessons.map(({ title, url }) => (
               <Card key={title}>
                 <CardTitle>{title}</CardTitle>
