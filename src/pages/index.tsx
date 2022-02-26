@@ -31,8 +31,20 @@ const lessons = [
     url: "/basics/geometry",
   },
   {
+    title: "Debug UI",
+    url: "/basics/debug-ui",
+  },
+  {
     title: "Textures",
     url: "/basics/textures",
+  },
+  {
+    title: "Materials",
+    url: "/basics/materials",
+  },
+  {
+    title: "3D Text",
+    url: "/basics/3d-text",
   },
 ];
 
